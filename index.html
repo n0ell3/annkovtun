@@ -647,23 +647,40 @@ footer {
     position: absolute;
     inset: 0;
     z-index: 2;
-    padding: 0 24px 48px;
+    padding: 0 24px 40px;
     justify-content: flex-end;
     align-items: center;
     background: transparent;
+    /* Subtle gradient ONLY behind logo area at bottom */
+    -webkit-mask-image: none;
+  }
+
+  /* Subtle dark gradient behind logo area only */
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    height: 55%;
+    background: linear-gradient(to top,
+      rgba(0,0,0,0.65) 0%,
+      rgba(0,0,0,0.3) 50%,
+      rgba(0,0,0,0) 100%);
+    z-index: -1;
+    pointer-events: none;
   }
 
   .hero-logo {
-    width: 85vw;
-    max-width: 380px;
+    width: 82vw;
+    max-width: 360px;
     opacity: 1;
-    animation: fadeDown 1.4s cubic-bezier(0.16,1,0.3,1) 0.2s forwards;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     display: block;
+    margin: 0 auto;
   }
 
-  /* VOICE · WORDS · UNIVERSE — one horizontal line on mobile */
+  /* VOICE · WORDS · UNIVERSE — one line, dots perfectly centered */
   .hero-sub {
     display: flex;
     flex-direction: row;
@@ -671,9 +688,27 @@ footer {
     justify-content: center;
     gap: 0;
     font-size: 9px;
-    letter-spacing: 0.3em;
-    margin-top: 14px;
+    letter-spacing: 0.25em;
+    margin-top: 12px;
     flex-wrap: nowrap;
+    width: 100%;
+  }
+
+  /* Reset span dots for mobile — use symmetric spacing */
+  .hero-sub span {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .hero-sub span::before {
+    content: '·';
+    margin: 0 10px;
+    color: var(--dimmer);
+    letter-spacing: 0;
+  }
+
+  .hero-sub span:first-child::before {
+    display: none;
   }
 
   .section-wrap { padding:80px 24px; }
@@ -983,7 +1018,7 @@ footer {
 <section id="contact">
   <div class="section-wrap" style="padding-top:48px;padding-bottom:48px;">
     <div class="contact-grid reveal">
-      <div class="contact-label">Contact: <a href="/cdn-cgi/l/email-protection#2a424f4646454b444441455c5e5f446a4d474b434604494547" class="contact-email"><span class="__cf_email__" data-cfemail="7b131e1717141a151510140d0f0e153b1c161a121755181416">[email&#160;protected]</span></a></div>
+      <div class="contact-label">Contact: <a href="mailto:helloannkovtun@gmail.com" class="contact-email">helloannkovtun@gmail.com</a></div>
       <div class="contact-tagline">Feel the Unseen</div>
     </div>
   </div>
