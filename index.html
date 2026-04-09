@@ -502,6 +502,7 @@ nav.scrolled {
   color: var(--white);
   margin-bottom: 24px;
   font-weight: 700;
+  text-align: center;
 }
 
 /* All platform links in one even horizontal row */
@@ -1025,7 +1026,7 @@ footer {
 <section id="contact">
   <div class="section-wrap">
     <div class="contact-grid reveal">
-      <a href="/cdn-cgi/l/email-protection#9af2fff6f6f5fbf4f4f1f5eceeeff4dafdf7fbf3f6b4f9f5f7" class="contact-btn">Contact</a> </a></div>
+      <a href="mailto:annkovtun.contact@gmail.com" class="contact-btn">Contact</a>
       <div class="contact-tagline">Feel the Unseen</div>
     </div>
   </div>
@@ -1037,7 +1038,7 @@ footer {
   <span class="footer-line2">Ann Kovtun</span>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
@@ -1075,12 +1076,4 @@ footer {
   // Mobile: tap card to toggle overlay
   document.querySelectorAll('.card').forEach(card => {
     card.addEventListener('click', () => {
-      const overlay = card.querySelector('.card-overlay');
-      const isOpen = overlay.style.opacity === '1';
-      document.querySelectorAll('.card .card-overlay').forEach(o => o.style.opacity = '0');
-      if (!isOpen) overlay.style.opacity = '1';
-    });
-  });
-</script>
-</body>
-</html>
+      const overlay = card.querySelector('.card-overlay
