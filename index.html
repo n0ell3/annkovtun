@@ -1039,6 +1039,7 @@ footer {
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   // Custom cursor
   const cursor = document.getElementById('cursor');
   document.addEventListener('mousemove', e => {
@@ -1073,4 +1074,16 @@ footer {
     });
   }, { threshold: 0.04 });
   revealEls.forEach(el => observer.observe(el));
-  // Mobile: tap card to toggle ove
+
+  // Mobile: tap card to toggle overlay
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('click', () => {
+      const overlay = card.querySelector('.card-overlay');
+      const isOpen = overlay.style.opacity === '1';
+      document.querySelectorAll('.card .card-overlay').forEach(o => o.style.opacity = '0');
+      if (!isOpen) overlay.style.opacity = '1';
+    });
+  });
+</script>
+</body>
+</html>
